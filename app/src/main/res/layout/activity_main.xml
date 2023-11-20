@@ -8,7 +8,8 @@
     android:background="@color/almostBlack"
     android:layout_height="match_parent"
     tools:ignore="HardcodedText"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    tools:viewBindingIgnore="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -28,9 +29,10 @@
             android:textColor="@color/white"
             android:textSize="25sp"
             app:layout_constraintBottom_toTopOf="@+id/resultsTV"
-            app:layout_constraintLeft_toLeftOf=""
-            app:layout_constraintRight_toRightOf=""
-            app:layout_constraintTop_toTopOf="" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
         <TextView
             android:id="@+id/resultsTV"
@@ -38,11 +40,10 @@
             android:layout_height="wrap_content"
             android:lines="1"
             android:maxLines="1"
-            android:text="Hello world"
             android:textAlignment="textEnd"
             android:textColor="@color/white"
             android:textSize="40sp"
-            tools:ignore="MissingConstraints"
+            tools:ignore="MissingConstraints,VisualLintBounds"
 
             tools:layout_editor_absoluteX="84dp"
             tools:layout_editor_absoluteY="309dp" />
@@ -57,21 +58,23 @@
             android:textColor="@color/red"
             android:onClick="allClearAction"
             android:text="AC"
-            />
+            tools:ignore="UsingOnClickInXml,VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:textColor="@color/red"
             android:onClick="backSpaceAction"
             android:text="⌫"
-            />
+            tools:ignore="UsingOnClickInXml,VisualLintButtonSize" />
+
         <Button
             style="@style/buttonNumber"
+            android:contentDescription="@string/app_name"
             android:text=""
-            />
+            tools:ignore="DuplicateSpeakableTextCheck,VisualLintButtonSize" />
         <Button
             style="@style/buttonOperator"
             android:text="÷"
-            />
+            tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>
 
@@ -81,19 +84,19 @@
         <Button
             style="@style/buttonNumber"
             android:text="7"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="8"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="9"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonOperator"
             android:text="×"
-            />
+            tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>
     <LinearLayout
@@ -102,19 +105,19 @@
         <Button
             style="@style/buttonNumber"
             android:text="4"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="5"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="6"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonOperator"
             android:text="-"
-            />
+            tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>
 
@@ -124,19 +127,19 @@
         <Button
             style="@style/buttonNumber"
             android:text="1"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="2"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="3"
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonOperator"
             android:text="+"
-            />
+            tools:ignore="VisualLintButtonSize" />
 
     </LinearLayout>
 
@@ -146,19 +149,21 @@
         <Button
             style="@style/buttonNumber"
             android:text="."
-            />
+            tools:ignore="VisualLintButtonSize" />
         <Button
             style="@style/buttonNumber"
             android:text="0"
-            />
+            tools:ignore="VisualLintButtonSize" />
+
         <Button
             style="@style/buttonNumber"
             android:layout_weight="2"
             android:background="@color/orange"
-            android:textSize="40sp"
             android:onClick="equalsAction"
             android:text="="
-            />
+            android:textColor="#455A64"
+            android:textSize="40sp"
+            tools:ignore="UsingOnClickInXml,VisualLintButtonSize" />
 
     </LinearLayout>
 
