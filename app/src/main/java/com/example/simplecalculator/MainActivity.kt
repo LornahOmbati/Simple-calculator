@@ -1,20 +1,29 @@
 package com.example.simplecalculator
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
+@Suppress("UNREACHABLE_CODE", "unused")
 class MainActivity : AppCompatActivity()
 {
     private var canAddOperation = false
     private var canAddDecimal = true
+    private lateinit var workingsTV: TextView
+    private lateinit var resultsTV: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        workingsTV = findViewById(R.id.workingsTV) // Replace 'workingsTextView' with your actual TextView ID
+        resultsTV = findViewById(R.id.resultsTV)
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun numberAction(view: View)
     {
         if(view is Button)
@@ -45,7 +54,7 @@ class MainActivity : AppCompatActivity()
     }
     fun allClearAction(view: View)
     {
-        workingsTV.text = ""
+        workingsTV.text= ""
         resultsTV.text = ""
     }
     fun backSpaceAction(view: View)
