@@ -52,18 +52,18 @@ class MainActivity : AppCompatActivity()
 
 
     }
-    fun allClearAction(view: View)
+    fun allClearAction()
     {
         workingsTV.text= ""
         resultsTV.text = ""
     }
-    fun backSpaceAction(view: View)
+    fun backSpaceAction()
     {
         val length = workingsTV.length()
         if(length > 0)
             workingsTV.text = workingsTV.text.subSequence(0, length - 1)
     }
-    fun equalsAction(view: View)
+    fun equalsAction()
     {
         resultsTV.text = calculateResults()
     }
